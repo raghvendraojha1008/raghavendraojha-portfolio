@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+:root {
+  --color-bg: #f6f7f5;
+  --color-surface: #ffffff;
+  --color-ink: #12151a;
+  --color-ink-muted: #5b6270;
+  --color-line: #e3e5e1;
+  --color-accent: #2454ff;
+  --color-accent-ink: #0c1f73;
+  --color-status-shipped: #1e8e5a;
+  --color-status-progress: #b9770e;
+  --color-status-proto: #6b7280;
+}
+
+@theme inline {
+  --color-bg: var(--color-bg);
+  --color-surface: var(--color-surface);
+  --color-ink: var(--color-ink);
+  --color-ink-muted: var(--color-ink-muted);
+  --color-line: var(--color-line);
+  --color-accent: var(--color-accent);
+  --color-accent-ink: var(--color-accent-ink);
+  --color-status-shipped: var(--color-status-shipped);
+  --color-status-progress: var(--color-status-progress);
+  --color-status-proto: var(--color-status-proto);
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}
+
+::selection {
+  background: var(--color-accent);
+  color: white;
+}
+
+a, button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
